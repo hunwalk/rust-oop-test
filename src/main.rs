@@ -1,23 +1,14 @@
+mod models;
+mod structures;
+mod services;
+mod traits;
+
 use std::io::{self, Write};
 use rpassword::read_password;
 use sha2::{Sha256, Digest};
 use structures::user::User;
 use models::user::UserModel;
 use services::authorization::Authorization;
-
-pub mod structures {
-    pub mod user;
-}
-pub mod models {
-    pub mod user;
-}
-pub mod traits {
-    pub mod authorization;
-}
-
-pub mod services {
-    pub mod authorization;
-}
 
 fn main() {
     let mut hasher = Sha256::new();
