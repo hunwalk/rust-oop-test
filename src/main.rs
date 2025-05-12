@@ -6,9 +6,8 @@ mod traits;
 use std::io::{self, Write};
 use rpassword::read_password;
 use sha2::{Sha256, Digest};
-use structures::user::User;
-use models::user::UserModel;
-use services::authorization::Authorization;
+use structures::user::{User, UserModel};
+use traits::authorization::Authorization;
 
 fn main() {
     let mut hasher = Sha256::new();
@@ -40,6 +39,7 @@ fn main() {
 
     if user_model.login(username, &password) {
         println!("Login successful! Welcome, {}.", user_model.user.first_name);
+        user_model.print_full_name();
     } else {
         println!("Login failed. Invalid username or password.");
     }

@@ -1,9 +1,4 @@
-use crate::structures::user::User;
-
-pub struct UserModel {
-    pub user: User,
-    pub authenticated: bool,
-}
+use crate::structures::user::UserModel;  
 
 impl UserModel {
     pub fn print_full_name(&self) {

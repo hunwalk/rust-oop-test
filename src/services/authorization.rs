@@ -1,5 +1,5 @@
-use crate::models::user::UserModel;
-pub(crate) use crate::traits::authorization::Authorization;
+use crate::structures::user::UserModel;
+use crate::traits::authorization::Authorization;
 use sha2::{Sha256, Digest};
 
 fn hash_password(password: &str) -> String {
